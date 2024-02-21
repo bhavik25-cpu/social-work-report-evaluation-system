@@ -65,3 +65,109 @@ Question: What was the service?
 Text Input field
 Note: For reference on how to do this algorithm please try and upload impact report on
 qsimpact.orgn impact report tab.
+_____________________________________________________________________________________________________
+apis
+1 post 
+```javascript
+
+http://localhost:3000/reports
+```
+
+JSON
+Body
+```javascript
+
+{
+  "category": "Education",
+  "points": 0,
+  "questions": [
+    {
+      "question": "How many individuals directly benefited from this program?",
+      "options": [
+        { "label": "1-10", "points": 5 },
+        { "label": "10-50", "points": 10 },
+        { "label": "Above 50", "points": 15 }
+      ]
+    },
+    {
+      "question": "What was the average increase in literacy skills observed?",
+      "options": [
+        { "label": "Below 25%", "points": 5 },
+        { "label": "25%-50%", "points": 10 },
+        { "label": "Above 50%", "points": 15 }
+      ]
+    },
+    {
+      "question": "Did the program provide access to essential educational resources?",
+      "options": [
+        { "label": "Yes", "points": 2 },
+        { "label": "No", "points": 0 }
+      ]
+    }
+  ]
+}
+```
+
+2 DELETE
+```javascript
+http://localhost:3000/reports/id
+```
+
+
+3 GET
+```javascript
+http://localhost:3000/reports/2
+```
+
+4 Update
+```javascript
+http://localhost:3000/reports/3
+```
+```javascript
+
+{
+  "category": "update education",
+  "points": 37,
+  "questions": [
+    {
+      "question": "this initiative?",
+      "options": [
+        { "label": "1-10", "points": 5 },
+        { "label": "10-50", "points": 10 },
+        { "label": "Above 50", "points": 15 }
+      ]
+    },
+    {
+      "question": "What was the percentage reduction in reported health issues within the target community?",
+      "options": [
+        { "label": "1-10%", "points": 5 },
+        { "label": "10-50%", "points": 10 },
+        { "label": "Above 50%", "points": 15 }
+      ]
+    },
+    {
+      "question": "Did the program provide access to preventative healthcare services?",
+      "options": [
+        { "label": "Yes", "points": 3 },
+        { "label": "No", "points": 0 }
+      ]
+    }
+  ]
+}
+```
+
+5 Post
+```javascript
+
+http://localhost:3000/reports/updatePoints
+```
+Body-json
+
+```javascript
+{
+  "id": 7,
+  "questionIndex": 0,
+  "optionIndex": 0
+}
+
+```
