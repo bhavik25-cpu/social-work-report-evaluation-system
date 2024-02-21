@@ -116,12 +116,12 @@ http://localhost:3000/reports/id
 
 3 GET
 ```javascript
-http://localhost:3000/reports/2
+http://localhost:3000/reports/id
 ```
 
 4 Update
 ```javascript
-http://localhost:3000/reports/3
+http://localhost:3000/reports/id
 ```
 ```javascript
 
