@@ -165,7 +165,7 @@ Body-json
 
 ```javascript
 {
-  "id": 7,
+  "id": 1,
   "questionIndex": 0,
   "optionIndex": 0
 }
