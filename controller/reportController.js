@@ -9,7 +9,6 @@ exports.updatePoints = async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   };
-// Create a new report
 exports.createReport = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -25,7 +24,6 @@ exports.createReport = async (req, res) => {
   }
 };
 
-// Get all reports
 exports.getAllReports = async (req, res) => {
   try {
     const reports = await reportService.getAllReports();
@@ -36,7 +34,6 @@ exports.getAllReports = async (req, res) => {
   }
 };
 
-// Get report by ID
 exports.getReportById = async (req, res) => {
   try {
     const report = await reportService.getReportById(req.params.id);
@@ -50,7 +47,6 @@ exports.getReportById = async (req, res) => {
   }
 };
 
-// Update report by ID
 exports.updateReport = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -66,7 +62,6 @@ exports.updateReport = async (req, res) => {
   }
 };
 
-// Delete report by ID
 exports.deleteReport = async (req, res) => {
   try {
     await reportService.deleteReport(req.params.id);
