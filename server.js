@@ -5,10 +5,8 @@ const reportRoutes = require('./routes/reportRoutes');
 
 const app = express();
 
-// Middleware
 app.use(bodyParser.json());
 
-// Routes
 app.use('/reports', reportRoutes);
 
 const PORT = process.env.PORT || 3000;
