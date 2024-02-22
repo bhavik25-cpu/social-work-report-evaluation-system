@@ -1,11 +1,9 @@
 const reportModel = require('./reportModel');
 
-// Update report points based on user answer
 exports.updatePoints = async (id, questionIndex, optionIndex) => {
   const updatedReport = await reportModel.updatePoints(id, questionIndex, optionIndex);
   return updatedReport;
 };
-// Create a new report
 exports.createReport = async (reportData) => {
   try {
     const report = await reportModel.createReport(reportData);
@@ -15,7 +13,6 @@ exports.createReport = async (reportData) => {
   }
 };
 
-// Get all reports
 exports.getAllReports = async () => {
   try {
     const reports = await reportModel.getAllReports();
@@ -25,7 +22,6 @@ exports.getAllReports = async () => {
   }
 };
 
-// Get report by ID
 exports.getReportById = async (id) => {
   try {
     const report = await reportModel.getReportById(id);
@@ -35,7 +31,6 @@ exports.getReportById = async (id) => {
   }
 };
 
-// Update report by ID
 exports.updateReport = async (id, reportData) => {
   try {
     const updatedReport = await reportModel.updateReport(id, reportData);
@@ -45,7 +40,6 @@ exports.updateReport = async (id, reportData) => {
   }
 };
 
-// Delete report by ID
 exports.deleteReport = async (id) => {
   try {
     await reportModel.deleteReport(id);
