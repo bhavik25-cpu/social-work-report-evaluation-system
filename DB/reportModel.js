@@ -1,6 +1,5 @@
 const db = require('./dbConfig');
 
-// Create a new report
 exports.createReport = (reportData) => {
   // Serialize the questions field to a JSON string
   const serializedQuestions = JSON.stringify(reportData.questions);
@@ -16,7 +15,6 @@ exports.createReport = (reportData) => {
   });
 };
 
-// Get all reports
 exports.getAllReports = () => {
   return new Promise((resolve, reject) => {
     db.query('SELECT * FROM reports', (err, rows) => {
@@ -29,7 +27,6 @@ exports.getAllReports = () => {
   });
 };
 
-// Get report by ID
 exports.getReportById = (id) => {
   return new Promise((resolve, reject) => {
     db.query('SELECT * FROM reports WHERE id = ?', [id], (err, rows) => {
@@ -46,7 +43,6 @@ exports.getReportById = (id) => {
   });
 };
 
-// Update report points based on user answer
 exports.updatePoints = (id, questionIndex, optionIndex) => {
   return new Promise((resolve, reject) => {
     let points = 0;
@@ -74,7 +70,6 @@ exports.updatePoints = (id, questionIndex, optionIndex) => {
   });
 };
 
-// Update report by ID
 exports.updateReport = (id, reportData) => {
   const serializedQuestions = JSON.stringify(reportData.questions);
 
@@ -89,7 +84,6 @@ exports.updateReport = (id, reportData) => {
   });
 };
 
-// Delete report by ID
 exports.deleteReport = (id) => {
   return new Promise((resolve, reject) => {
     db.query('DELETE FROM reports WHERE id = ?', [id], (err) => {
